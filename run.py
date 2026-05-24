@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-MHY 工具箱 - 正式启动脚本
+ZRC 工具箱 - 正式启动脚本
 该脚本提供了错误处理，在启动失败时显示友好的提示信息
 """
 
@@ -28,6 +28,5 @@ except Exception as e:
     # 处理其他类型的启动错误
     print(f"程序启动失败: {e}")
     import traceback
-    # 打印完整的错误堆栈信息
     traceback.print_exc()
     input("按回车键退出...")
