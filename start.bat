@@ -1,6 +1,6 @@
 @echo off
 chcp 65001 >nul
-title 启动 MHY 工具箱
+title ZRC 工具箱
 
 :: 获取脚本所在目录
 set "SCRIPT_DIR=%~dp0"
@@ -61,5 +61,5 @@ echo.
 :: 运行主程序
 "%PYTHON_CMD%" "%SCRIPT_DIR%\main.py"
 
-:: 脚本运行完后暂停窗口（方便看报错，不需要可以删掉这行）
+:: 脚本运行完后暂停窗口（方便看报错）
 pause
