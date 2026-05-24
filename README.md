@@ -6,12 +6,12 @@
 
 **专业级 Windows 硬件检测与系统管理工具集**
 
-[![Version](https://img.shields.io/badge/版本-v1.0.0-blue?style=for-the-badge&logo=github)](https://github.com/zhouruichen2015-pixel/ZRC-Toolkit/releases)
-[![Platform](https://img.shields.io/badge/平台-Windows%207%2B-0078D7?style=for-the-badge&logo=windows)](https://github.com/zhouruichen2015-pixel/ZRC-Toolkit)
+[![Version](https://img.shields.io/badge/版本-v1.0.0-blue?style=for-the-badge&logo=github)](https://github.com/zhouruichen2015-pixel/ZRC-Toolbox/releases)
+[![Platform](https://img.shields.io/badge/平台-Windows%207%2B-0078D7?style=for-the-badge&logo=windows)](https://github.com/zhouruichen2015-pixel/ZRC-Toolbox)
 [![Python](https://img.shields.io/badge/Python-3.8%2B-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org/)
-[![License](https://img.shields.io/badge/许可-仅供学习-green?style=for-the-badge)](LICENSE)
-[![Tools](https://img.shields.io/badge/内置工具-80%2B-orange?style=for-the-badge)](https://github.com/zhouruichen2015-pixel/ZRC-Toolkit)
-[![Stars](https://img.shields.io/github/stars/zhouruichen2015-pixel/ZRC-Toolkit?style=for-the-badge&color=yellow)](https://github.com/zhouruichen2015-pixel/ZRC-Toolkit/stargazers)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)](LICENSE)
+[![Tools](https://img.shields.io/badge/内置工具-80%2B-orange?style=for-the-badge)](https://github.com/zhouruichen2015-pixel/ZRC-Toolbox)
+[![Stars](https://img.shields.io/github/stars/zhouruichen2015-pixel/ZRC-Toolbox?style=for-the-badge&color=yellow)](https://github.com/zhouruichen2015-pixel/ZRC-Toolbox/stargazers)
 
 <br/>
 
@@ -43,6 +43,54 @@ ZRC 工具箱彻底解决了这个问题：
 | 常用软件来回切换 | 自定义软件功能，添加你自己的工具 |
 
 ---
+
+## 🏗️ 技术架构
+
+```
+┌─────────────────────────────────────────────┐
+│              ZRC 工具箱 启动器                │
+│            (PyQt5 GUI Application)          │
+├──────────┬──────────┬──────────┬────────────┤
+│  🔧 核心  │  🎨 UI层  │  📦 工具  │  ⚙️ 配置   │
+│ 模块引擎  │  组件库   │  启动器  │  自定义     │
+├──────────┼──────────┼──────────┼────────────┤
+│main_window│card_widget│tool_launcher│custom_  │
+│splash_screen│gauge_widget│  .py   │tools.json │
+│styles.py │base_module│         │           │
+└──────────┴──────────┴──────────┴────────────┘
+         │              │              
+    ┌────┴────┐   ┌────┴────────┐
+    │ 功能模块 │   │ 第三方便携工具  │
+    ├─────────┤   ├─────────────┤
+    │system_  │   │ CPU-Z       │
+    │info     │   │ HWiNFO      │
+    │monitor  │   │ GPU-Z       │
+    │optimizer│   │ CrystalDisk │
+    │task_mgr │   │ MemTest86   │
+    │network_ │   │ ...80+ tools│
+    │scanner  │   └─────────────┘
+    │registry │
+    │editor   │
+    │virus_   │
+    │scanner  │
+    │file_    │
+    │shredder │
+    │iso_     │
+    │writer   │
+    │driver_  │
+    │manager  │
+    │backup_  │
+    │restore  │
+    │security │
+    │_scanner │
+    └─────────┘
+```
+
+**技术栈：**
+- **UI框架**: `PyQt5` + `PyQtChart` — 原生级桌面体验
+- **系统交互**: `psutil` + `pywin32` + `wmi` — 深度系统集成
+- **启动方式**: `start.bat`(一键启动) / `python main.py`(开发者模式)
+- **自定义扩展**: 编辑 `custom_tools.json` 即可添加自己的工具
 
 ## 🗂️ 工具分类总览
 
@@ -266,7 +314,7 @@ ZRC工具箱/
 
 ### 📦 第一步：下载分卷文件
 
-前往 [Releases 页面](https://github.com/zhouruichen2015-pixel/ZRC-Toolkit/releases) 下载以下 **3 个分卷文件**（必须全部下载，缺一不可）：
+前往 [Releases 页面](https://github.com/zhouruichen2015-pixel/ZRC-Toolbox/releases) 下载以下 **3 个分卷文件**（必须全部下载，缺一不可）：
 
 | # | 文件名 | 大小 | 状态 |
 |---|--------|------|------|
@@ -394,7 +442,7 @@ python --version
 **第二步：克隆仓库**
 
 ```bash
-git clone https://github.com/zhouruichen2015-pixel/ZRC-Toolkit.git
+git clone https://github.com/zhouruichen2015-pixel/ZRC-Toolbox.git
 cd ZRC-Toolkit
 ```
 
@@ -668,7 +716,7 @@ pip install -r requirements.txt -i https://pypi.tuna.tsinghua.edu.cn/simple
 
 **如果这个项目对你有帮助，请点一个 ⭐ Star 支持一下！**
 
-[![GitHub Stars](https://img.shields.io/github/stars/zhouruichen2015-pixel/ZRC-Toolkit?style=social)](https://github.com/zhouruichen2015-pixel/ZRC-Toolkit)
+[![GitHub Stars](https://img.shields.io/github/stars/zhouruichen2015-pixel/ZRC-Toolbox?style=social)](https://github.com/zhouruichen2015-pixel/ZRC-Toolbox)
 
 Made with ❤️ by [zhouruichen2015-pixel](https://github.com/zhouruichen2015-pixel)
 
